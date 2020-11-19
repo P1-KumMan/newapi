@@ -11,7 +11,7 @@ const postRoute = require("./routes/posts");
 app.use("/books", postRoute);
 
 mongoose.connect(
-  process.env.DB_CONNECTION,
+  "mongodb+srv://neo:bitbitbit8bit@cluster0.im926.mongodb.net/books?retryWrites=true&w=majority",
   { useUnifiedTopology: true, useNewUrlParser: true },
   () => console.log("connected")
 );
