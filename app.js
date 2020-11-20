@@ -20,4 +20,4 @@ app.get("/", (req, res) => {
   res.send("Alive");
 });
 
-app.listen(process.env.PORT || 4200);
+app.listen(4200);
