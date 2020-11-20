@@ -19,5 +19,6 @@ mongoose.connect(
 app.get("/", (req, res) => {
   res.send("Alive");
 });
+const port = process.env.PORT || "4200";
 
-app.listen(4200);
+app.listen(port);
