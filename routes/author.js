@@ -34,4 +34,17 @@ router.delete("/:authorId", async (req, res) => {
   }
 });
 
+router.patch('/:authorId', async (req, res) => {
+    try {
+        console.log(req.body)
+        const updateauthor = await Book.updateOne(
+            { _id: req.params.authorId },
+            { $set: { author: req.body.author } }
+        )
+        res.json(updateauthor)
+    } catch (err) {
+        res.json({ message: err })
+    }
+    console.log(req.params.author)
+})
 module.exports = router;
