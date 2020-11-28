@@ -60,7 +60,7 @@ router.patch('/:bookId', async (req, res) => {
             { _id: req.params.bookId },
             { $set: { bookname: req.body.bookname, author: req.body.author } }
         )
-        res.json(updateBook)
+        res.json(updateBookname)
     } catch (err) {
         res.json({ message: err })
     }
