@@ -34,6 +34,17 @@ router.delete('/:bookId', async (req, res) => {
     }
 })
 
+router.delete('/:author', async (req, res) => {
+    try {
+        const removeAuthor = await Book.deleteMany({
+            author: req.params.author,
+        })
+        res.json(removeAuthor)
+    } catch (err) {
+        res.json({ message: err })
+    }
+})
+
 router.get('/count', async (req, res) => {
     try {
         const authors_from_books_db = await Book.find()
