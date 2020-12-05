@@ -34,10 +34,10 @@ router.delete('/:bookId', async (req, res) => {
     }
 })
 
-router.delete('/:author', async (req, res) => {
+router.delete('/author/:authorName', async (req, res) => {
     try {
         const removeAuthor = await Book.deleteMany({
-            author: req.params.author,
+            author: req.params.authorName,
         })
         res.json(removeAuthor)
     } catch (err) {
